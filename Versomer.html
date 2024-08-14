@@ -1,164 +1,651 @@
+
 <!DOCTYPE html>
-<html lang="ru-RU">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Youtube.com</title>
-	<base href="https://sp1.sweb.ru:443/" />
-	<!-- <meta name="viewport" content="width=1280, user-scalable=no" /> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-		<meta name="robots" content="none" />
-				<link rel="icon" href="https://sp1.sweb.ru/ru/PUkv1/builder-favicon" type="image/png" />
-		
-	
-	
-	<link href="modules/builder/js/lib/bootstrap/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/js/lib/jquery-ui/ui-lightness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/js/lib/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/js/lib/colorpicker/jquery.colorpicker.css" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/js/lib/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
-	<link href="https://sp1.sweb.ru:443/locale/ru_RU/LC_MESSAGES/webbuilder.json?v=1722257564" rel="gettext" type="application/json" />
-	<script src="https://sp1.sweb.ru/ru/PUkv1/js/builder-lib/" type="text/javascript"></script>
-	<script src="https://sp1.sweb.ru/modules/builder/js/gen/main.bundle.js?ts=1722585734" type="text/javascript"></script>
-	<script src="https://sp1.sweb.ru:443/ru-RU/PUkv1/js/builder-loader?builder=1&amp;short&amp;publishOnLoad&amp;migrate" type="text/javascript"></script>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="copyright" lang="ru" content="EASYX">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Купить донат на сервере KTFCraft">
+        <meta name="keywords" content="minecraft, автодонат, онлайн-магазин, easydonate, KTFCraft">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="KTFCraft ">
+        <meta property="og:image" content="https://ktfcraft.easydonate.ru/og:image">
+        <meta property="og:url" content="https://ktfcraft.easydonate.ru">
 
-	
-	<link href="modules/builder/css/common.css?v=20240404174930" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/css/builder.css?v=20240801152218" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/css/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/css/flag-icon-css/css/flag-icon.min.css?v=20240404174930" rel="stylesheet" type="text/css" />
-	<link href="modules/builder/css/site.css?v=20240731140604" rel="stylesheet" type="text/css" />
-		<link href="modules/builder/css/theme_modern.css?ts=1712242170" rel="stylesheet" type="text/css" />
-		<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-	<![endif]-->
-				<style type="text/css">
-			#head > .sh {
-				display: none;
-			}
+        <link rel="icon" href="https://easydonate.s3.easyx.ru/images/favicons/ddecbb872e72d2ac1c21d04655ddbbae063f054b6d747cae5f8e4666c8c24f6e.png" type="image/x-icon">
 
-			#head, .wb-preview-toolbar {
-				-webkit-box-shadow: 0px 0px 9px 0px rgba(255, 255, 255, 0);
--moz-box-shadow: 0px 0px 9px 0px rgba(255, 255, 255, 0);
-box-shadow: 0px 0px 9px 0px rgba(255, 255, 255, 0);
-border-bottom: 1px solid #ffffff;
-			}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/themes/neon/assets/css/theme.min.css?v=4">
+        <link rel="stylesheet" href="/themes/neon/assets/css/animate.css">
 
-			#head-control, .wb-preview-toolbar {
-				background-color: #062436;
-border-bottom: 1px solid #062436;
-			}
+        
+        <link rel="stylesheet" href="/themes/neon/assets/css/style.css?v=28">
 
-			#head-tools {
-				background-color: #3dbef6;
-			}
+        
+        <style media="screen">
+            .stripe-loading-indicator {
+                height: 3px !important;
+            }
+            .stripe-loading-indicator .stripe, .stripe-loading-indicator .stripe-loaded {
+                background: #fa5252 !important;
+            }
+        </style>
 
-			.wb_item_group.vertical > div.wb_item_group_container {
-				-webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.5);
-background-color: #062436;
-border: 1px solid #062436;
-			}
+        <style type="text/css">
+                            .overlay::before {
+                    position: absolute;
+                    content: "";
+                    background: linear-gradient(0deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0.7) 100%);
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                }
+            
+            .bg-light {
+                background: #fa525220
+            }
 
-						.wb_item_group > div.wb_item_group_container > .arrow {
-				border-bottom-color: #062436;
-			}
-			
-			.wb_item_group > div.wb_item_group_container > .arrow:after {
-				border-bottom: 6px solid #ffffff;
-			}
+            .bg-medium {
+                background: #fa525235
+            }
 
-			.wb-preview-toolbar .wb_item_sep, .wb-help-overlay-widgets .wb_item_sep, #wb_toolbar .wb_item_sep, #wb_toolbar_ext .wb_item_sep {
-				border-right: 1px solid #ffffff;
-			}
+            .shop::-webkit-scrollbar-thumb {
+                background: #fa5252aa
+            }
 
-			#head-control .wb_item_sep {
-							}
+            .shop::-webkit-scrollbar-thumb:hover {
+                background: #fa5252
+            }
 
-			.wb_toolbar .wb_item {
-				opacity: 1;
-							}
+            .skeleton-box {
+                display: inline-block;
+                height: 1em;
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                background-color: #0f0f0f;
+            }
 
-			.wb_toolbar .wb_item .caret {
-				border-right-width: 4px;
-border-left-width: 4px;
-border-top-width: 4px;
-border-top-color: #ffffff;
-			}
+            .skeleton-box::after {
+                position: absolute;
+                border-radius: 10px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transform: translateX(-100%);
+                background-image: linear-gradient(90deg, #fa525200 0, #fa525230 20%, #fa525280 60%, #fa525200);
+                -webkit-animation: shimmer 1s infinite;
+                animation: shimmer 1.6s infinite;
+                content: "";
+            }
 
-			.wb_toolbar .wb_item > button > i {
-				color: #ffffff;
-			}
+            @-webkit-keyframes shimmer {
+                100% {
+                    transform: translateX(100%);
+                }
+            }
 
-			.wb_toolbar .wb_item > span {
-				display: block;
-color: #ffffff;
-			}
+            @keyframes shimmer {
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+        </style>
+    </head>
+    <body class="position-relative">
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-transparent navbar-theme-dark position-absolute top-0 left-0 right-0" style="z-index: 100;">
+            <div class="container position-relative">
+            	<a class="navbar-brand" href="https://ktfcraft.easydonate.ru">
+            		<img class="navbar-brand-dark" src="https://easydonate.s3.easyx.ru/images/logos/ddecbb872e72d2ac1c21d04655ddbbae063f054b6d747cae5f8e4666c8c24f6e.png" alt="KTFCraft" style="border-radius: 8px;">
+            	</a>
+	            <div class="navbar-collapse collapse justify-content-between" id="navbar-soft">
+	                <div class="navbar-collapse-header">
+	                	<div class="row">
+	                    	<div class="col-6 collapse-brand">
+	                        	<a href="https://ktfcraft.easydonate.ru">
+	                            	<img src="https://easydonate.s3.easyx.ru/images/logos/ddecbb872e72d2ac1c21d04655ddbbae063f054b6d747cae5f8e4666c8c24f6e.png" alt="menuimage">
+	                            </a>
+	                        </div>
+	                        <div class="col-6 collapse-close">
+	                            <i class="fas fa-times" data-toggle="collapse" role="button" data-target="#navbar-soft" aria-controls="navbar-soft" aria-expanded="false" aria-label="Toggle navigation"></i>
+	                        </div>
+	                    </div>
+	                </div>
+	                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                                                    <li class="nav-item link-shop">
+                                <a href="#shop-section" class="nav-link animate-up-2">
+                                    <i class="fas fa-shopping-basket"></i>
+                                    <span class="nav-link-inner-text">Магазин</span>
+                                </a>
+                            </li>
+                                                            <li class="nav-item link-our-servers">
+                                    <a href="#servers" class="nav-link animate-up-2">
+                                        <i class="fas fa-server"></i>
+                                        <span class="nav-link-inner-text">Наши серверы</span>
+                                    </a>
+                                </li>
+                                                    	                </ul>
+	            </div>
+	            <div class="d-flex align-items-center">
+                    	                <button class="navbar-toggler ml-2 text-white" type="button" data-toggle="collapse" data-target="#navbar-soft" aria-controls="navbar-soft" aria-expanded="false" aria-label="Toggle navigation">
+	                    <span class="navbar-toggler-icon"></span>
+	                </button>
+	            </div>
+	        </div>
+	    </nav>
 
-			.wb_toolbar .wb_item.wb_inactive {
-				opacity: 0.35;
-			}
+        <title>KTFCraft - Главная</title>
 
-			.wb_toolbar .wb_item.wb_inactive > button > i {
-							}
 
-			.wb_toolbar .wb_item.wb_inactive > span {
-							}
+<main class="bg-elegant bg-pattern">
+    <section class="section section-xl section-image overlay overflow-hidden jarallax py-6 py-lg-9 py-md-8 py-sm-7" id="welcome-section" style="background: url(https://easydonate.s3.easyx.ru/images/backgrounds/e76b76f4ba028a336de83896172540f42791696e52c277804c50430dd0f06e38.jpeg) no-repeat; background-size: cover">
+        <div class="container z-2">
+            <div class="row">
+                <div class="text-center col-12 pb-8 pt-6 wow fadeInLeftBig my-auto">
+                    <h1 class="display-1 text-danger text-shadow-danger font-weight-boldest mb-3 shop-name" style="line-height: 80%">KTFCraft</h1>
+                                    </div>
+                            </div>
+        </div>
+    </section>
 
-						.wb_toolbar .wb_item.wb-vis-draggable:hover {
-				background-color: #062436;
-			}
-			
-			
-			.wb_toolbar .wb_item:hover,
-			.wb_toolbar .wb_item:focus,
-			.wb_toolbar .wb_item.active {
-							}
+    <section class="section" id="shop-section">
+        <div class="container">
+            <form method="POST" action="https://ktfcraft.easydonate.ru" accept-charset="UTF-8" data-request="onBuy" data-request-flash="1"><input name="_session_key" type="hidden" value="btOjDF6X5n8jR93rAmQiri6gi23cqa5XaXSsAsx1"><input name="_token" type="hidden" value="UfTRRvA3wCyFRyfBy7xjOL2CRnrWTR5ZQLlZ9E0u">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-3 font-weight-boldest lh-sm text-white text-md-left text-center mb-5">
+                                                                            Введите <span class="text-danger font-weight-boldest">никнейм</span>, <span class="text-danger font-weight-boldest">email</span><br>
+                                        и выберите <span class="text-danger font-weight-boldest">сервер</span>,<br>
+                                                                        чтобы приобрести товар
+                                </h1>
+                            </div>
+                            <div class="col-md">
+                                                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                class="form-control text-white font-weight-light bg-transparent input-username"
+                                                placeholder="Никнейм"
+                                                data-request="onTypeUsername"
+                                                data-request-update="shop: '.shop', cart_products: '.cart-products', 'chosen-product': '.chosen-product', 'cart_cost': '.cart-cost'"
+                                                data-track-input
+                                                required>
+                                        </div>
+                                    </div>
+                                                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" name="email" class="form-control text-white font-weight-light bg-transparent input-username" placeholder="Ваш Email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="select-server form-group"></div>
+                            </div>
+                            <div class="col-12 d-none shop-selection">
+                                <div class="form-group position-relative">
+                                    <button
+                                        class="btn btn-icon w-100 button-username shadow-none input-username mb-2 shop-button"
+                                        type="button">
+                                        <span class="btn-inner-text text-white chosen-product text-truncate">
+                                                                                            <div class="chosen-product"></div>
+                                                                                    </span>
+                                        <span class="btn-inner-icon chose-product-icon"><i class="fas fa-chevron-down"></i></span>
+                                    </button>
+                                    <div class="shop d-none rounded-lg" id="shop"></div>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="cart"></div>
+                    </div>
+                </div>
 
-			.wb_toolbar .wb_item:hover > button > i,
-			.wb_toolbar .wb_item:focus > button > i,
-			.wb_toolbar .wb_item.active > button > i {
-				color: #43edb1;
-			}
+                    <div class="modal fade" id="accept-payment" tabindex="-1" role="dialog" aria-labelledby="accept-payment" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                            <div class="modal-content rounded-0">
+                                <div class="modal-header d-block border-0">
+                                    <h1 class="diplay-2 font-weight-bolder mb-0 text-black">Оплата</h1>
+                                    <p class="mb-5 text-black">Сумма представлена с учетом комиссии. Комиссия платежной системы может отличаться.</p>
+                                </div>
+                                <div class="modal-body d-flex justify-content-between text-black">
+                                    <p class="mb-0 my-auto">Сумма:</p>
+                                    <h1 class="display-3 font-weight-bolder mb-0 text-black"><span class="cart-cost cart-cost-percent font-weight-bolder">0.00 ₽</span><i class="fas fa-ruble-sign ml-2"></i></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-			.wb_toolbar .wb_item:hover > span,
-			.wb_toolbar .wb_item:focus > span,
-			.wb_toolbar .wb_item.active > span {
-				color: #ffffff;
-			}
+                    <div class="modal fade" id="payment-type" tabindex="-1" role="dialog" aria-labelledby="payment-type" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                            <div class="modal-content rounded-0">
+                                <div class="modal-body" style="background: #f8f9fa">
+                                    <h1 class="diplay-2 font-weight-bolder mb-0 text-black">Оплата</h1>
+                                    <p class="mb-5 text-black">Выберите предпочитаемый способ оплаты.</p>
 
-			.wb-preview-toolbar .btn-default,
-			.wb-preview-toolbar .input-group > input,
-			.wb-preview-toolbar .btn-group > button.btn,
-			.wb-preview-toolbar .input-group > .input-group-btn > button.btn,
-			#settings-toolbar-cont .input-group > input,
-			#settings-toolbar-cont .btn-group > button.btn,
-			#settings-toolbar-cont .input-group > .input-group-btn > button.btn {
-				color: #062436;
-background-color: #ffffff;
-border: 1px solid #062436;
-			}
-			.wb-preview-toolbar .btn-group > button.btn > i,
-			#settings-toolbar-cont .btn-group > button.btn > i {
-				color: #062436;
-			}
-		</style>
-		<!-- Custom head script -->
-<style>
-@media (max-width: 1100px) {
-	#elements_toolbar .spd-menu-node>.spd-mn-content>.spd-mn-text {
-		color: #000 !important;
-	}
-	#elements_toolbar .spd-et-plugins .spd-menu-node.ui-draggable>.spd-mn-content {
-		color: #404040 !important;
-	}
-}
-</style>
-<!-- Custom head script end -->
-</head>
+                                                                            <h4 class="font-weight-bold text-black">Россия</h4>
 
-<body>
-														</body>
+                                        <div class="row mb-5">
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'sbp', payment_system: 'cypix-netting'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/sbp.svg" class="img-fluid img-center" style="width: 48px;height: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">СБП</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Минимум 10 ₽</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'tinkoff'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/mir.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">МИР, ₽</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Россия</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'tinkoff'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/visa.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Visa, ₽</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Россия</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'tinkoff'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/mastercard.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">MasterCard, ₽</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Россия</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                                                            <h4 class="font-weight-bold text-black">Казахстан</h4>
+
+                                        <div class="row mb-5">
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'cypix-netting-kzt'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/visa.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Visa, ₸</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Минимум 500 ₸</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'cypix-netting-kzt'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/mastercard.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">MasterCard, ₸</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Минимум 500 ₸</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                                                            <h4 class="font-weight-bold text-black">Любые страны</h4>
+
+                                        <div class="row mb-5">
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'payselection'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/visa.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Visa, $</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Любые страны</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'card', payment_system: 'payselection'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/mastercard.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">MasterCard, $</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Любые страны</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                                                            <h4 class="font-weight-bold text-black">Электронные деньги</h4>
+
+                                        <div class="row mb-5">
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'advcash', payment_system: 'advcash'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/volet.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Volet</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Электронные деньги</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                                                            <h4 class="font-weight-bold text-black">Мобильный</h4>
+
+                                        <div class="row ">
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'megafon', payment_system: 'mobimoney'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/megafon.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">МегаФон</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Мобильный</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'beeline', payment_system: 'mobimoney'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/beeline.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Билайн</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Мобильный</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                            <div class="col-xl-4 col-lg-6">
+                                                    <a
+                                                        href="#"
+                                                        data-request="onBuy"
+                                                        data-request-data="payment_type: 'tele2', payment_system: 'mobimoney'"
+                                                        data-request-update="cart_products: '.cart-products', cart_cost: '.cart-cost', shop: '.shop'"
+                                                        data-request-success="if (data['success']) redirect(data)"
+                                                        data-request-flash>
+                                                        <div class="card mb-2 border-0 rounded-0 shadow-sm">
+                                                            <div class="card-body d-flex p-3">
+                                                                <div class="my-auto">
+                                                                    <img src="https://ktfcraft.easydonate.ru/themes/neon/assets/images/payment-types/tele2.svg" class="img-fluid img-center" style="width: 48px">
+                                                                </div>
+                                                                <div class="my-auto ml-4">
+                                                                    <h5 class="font-weight-bolder mb-1 text-black">Tele2</h5>
+                                                                    <p class="small mb-0 text-uppercase text-black">Мобильный</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                                                    </div>
+                                    
+                                    <a class="text-underline cursor-pointer text-danger my-auto" onclick="$('#payment-type').modal('hide')">
+                                        Отмена
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+                    <section class="section container" id="servers">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-3 bg-dark border-0 skew-x--5">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="server-online bg-light-danger mr-3">
+                                        <div class="server-online-indicator-content text-danger text-shadow-danger"><i class="fas fa-users"></i></div>
+                                    </div>
+                                    <div class="w-100">
+                                        <h6 class="mb-0 skeleton-box w-50"></h6>
+                                        <h5 class="skeleton-box w-100 mb-0"></h5>
+                                        <span class="skeleton-box w-75"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        <div id="sections">
+            <div id="vknews"></div>
+            <div id="last-payments"></div>
+        </div>
+
+            <section class="section section-sm text-white main-instruction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="h2 font-weight-boldest text-danger text-shadow-danger">Инструкция по покупке</h2>
+                                                    <p class="font-weight-bolder mb-0">1. Выбор товара</p>
+                <p class="mt-0">Добавьте необходимые товары в корзину и заполните предлагаемую форму.</p>
+
+                <p class="font-weight-bolder mb-0">2. Оплата товара</p>
+                <p class="mt-0">Оплатите товары, добавленные в корзину.</p>
+
+                <p class="font-weight-bolder mb-0">3. Активация</p>
+                <p class="mt-0">После оплаты товары выдаются на выбранном Вами сервере автоматически.</p>
+                                            </div>
+                </div>
+            </div>
+        </section>
+    
+    <footer class="footer section section-sm bg-dark text-white" style="font-size: inherit !important;height: auto !important;width: 100% !important;display: block !important; opacity: 1 !important; transform: none !important; position: relative !important; visibility: visible !important;">
+        <div class="container" style="display: block !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">
+            <div class="row" id="footer" style="display: flex !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">
+                <div class="col-sm-6 mb-4 mb-md-0" style="display: block !important; opacity: 1 !important; position: inherit !important; visibility: visible !important;">
+                    <div class="d-flex" style="display: flex !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">
+                        <a class="footer-brand mr-3 my-auto" href="https://ktfcraft.easydonate.ru" style="display: block !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">
+                            <img src="https://easydonate.s3.easyx.ru/images/logos/ddecbb872e72d2ac1c21d04655ddbbae063f054b6d747cae5f8e4666c8c24f6e.png" style="border-radius: 8px; display: block !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">
+                        </a>
+                        <p class="small mb-0" style="display: inline !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important; font-size: 80% !important">
+                            © 2024 KTFCraft.<br>
+                                                            Создано с помощью <a href="//easydonate.ru" target="_blank" class="text-danger text-shadow-danger" style="display: inline !important; opacity: 1 !important; transform: none !important; position: inherit !important; visibility: visible !important;">EasyDonate</a>.
+                                                    </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 text-sm-right my-auto">
+                    <div>
+                        <ul class="list-inline d-inline-block" id="footer-social-links">
+                                                                                                                                                <li class="list-inline-item">
+                                    <a href="https://youtube.com/@ktfcraft?si=UolfP72l3ClLjxZD" target="_blank" class="btn btn-link btn-google-plus text-white">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                                                                                                                                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+</main>
+        <div class="fixed-bottom-right text-right" style="z-index: 10" id="widgets"></div>
+
+            </body>
+
+    <script type="text/javascript" src="/themes/neon/assets/js/jquery.min.js?v=3.6.3"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/counter.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/countdown.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/owl-carousel.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/smooth-scroll.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/pixel.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/smartcaptcha.min.js"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/shop.js?v=ooo"></script>
+    <script type="text/javascript" src="/themes/neon/assets/js/app.js?v=16"></script>
+
+    
+    
+    <script src="/modules/system/assets/js/framework.js"></script>
+<script src="/modules/system/assets/js/framework.extras.js"></script>
+<link rel="stylesheet" property="stylesheet" href="/modules/system/assets/css/framework.extras.css">
+    <script src="https://ktfcraft.easydonate.ru/plugins/dontfollow/easydonate/assets/js/easydonate.js?v=31"></script>
+<script src="https://ktfcraft.easydonate.ru/plugins/dontfollow/easydonate/assets/js/payment.js?v=6"></script>
+<script src="https://ktfcraft.easydonate.ru/plugins/dontfollow/attendance/assets/js/metric.js?v=1"></script>
+
+    <script type="text/javascript">
+        $.request('Shop::onLoadShop', {
+            update: {
+                'cart': '.cart',
+                'shop': '#shop',
+                'chosen-product': '.chosen-product',
+                'select_server': '.select-server'
+            }
+        })
+    </script>
+                                <script type="text/javascript">
+                                    var shopSelection = $('.shop-selection')
+                                    if ($.cookie('username') && shopSelection.hasClass('d-none')) {
+                                        shopSelection.removeClass('d-none')
+                                    }
+                                </script>
+    
+    <script type="text/javascript">
+        $('.modal').on('shown.bs.modal', () => {
+            var body = $('body')
+            if (!body.hasClass('modal-open')) {
+                body.addClass('modal-open')
+            }
+        })
+    </script>
 </html>
